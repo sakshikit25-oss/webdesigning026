@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopX Product Showcase</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-indigo-600 text-white p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">🛍 ShopX</h1>
+
+            <div class="space-x-6 hidden md:flex">
+                <a href="#" class="hover:text-yellow-300">Home</a>
+                <a href="#" class="hover:text-yellow-300">Products</a>
+                <a href="#" class="hover:text-yellow-300">Offers</a>
+                <a href="#" class="hover:text-yellow-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center py-16">
+
+        <h2 class="text-5xl font-bold">
+            New Arrival Collection
+        </h2>
+
+        <p class="mt-4 text-lg">
+            Upgrade your lifestyle with our latest products.
+        </p>
+
+        <button class="mt-6 bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-200">
+            Shop Now
+        </button>
+
+    </section>
+
+    <!-- Product Section -->
+    <section class="max-w-7xl mx-auto py-10 px-6">
+
+        <h2 class="text-4xl font-bold text-center mb-10">
+            Featured Products
+        </h2>
+
+        <!-- Responsive Flexbox -->
+        <div class="flex flex-col md:flex-row gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300 flex-1">
+
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+                     class="w-full h-56 object-cover"
+                     alt="Headphones">
+
+                <div class="p-5">
+
+                    <h3 class="text-2xl font-bold">
+                        Wireless Headphones
+                    </h3>
+
+                    <p class="text-gray-500 mt-2">
+                        Noise cancellation with crystal-clear sound quality.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-indigo-600 text-2xl font-bold">
+                            ₹2,999
+                        </span>
+
+                        <span class="text-yellow-500">
+                            ⭐ 4.8
+                        </span>
+                    </div>
+
+                    <button class="mt-5 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300 flex-1">
+
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
+                     class="w-full h-56 object-cover"
+                     alt="Watch">
+
+                <div class="p-5">
+
+                    <h3 class="text-2xl font-bold">
+                        Smart Watch
+                    </h3>
+
+                    <p class="text-gray-500 mt-2">
+                        AMOLED display with fitness tracking features.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-indigo-600 text-2xl font-bold">
+                            ₹4,499
+                        </span>
+
+                        <span class="text-yellow-500">
+                            ⭐ 4.9
+                        </span>
+                    </div>
+
+                    <button class="mt-5 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300 flex-1">
+
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"
+                     class="w-full h-56 object-cover"
+                     alt="Shoes">
+
+                <div class="p-5">
+
+                    <h3 class="text-2xl font-bold">
+                        Running Shoes
+                    </h3>
+
+                    <p class="text-gray-500 mt-2">
+                        Lightweight shoes designed for maximum comfort.
+                    </p>
+
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-indigo-600 text-2xl font-bold">
+                            ₹3,299
+                        </span>
+
+                        <span class="text-yellow-500">
+                            ⭐ 4.7
+                        </span>
+                    </div>
+
+                    <button class="mt-5 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-600 text-white text-center py-5 mt-10">
+        <p>© 2026 ShopX | Responsive Product Showcase</p>
+    </footer>
+
+</body>
+</html>
