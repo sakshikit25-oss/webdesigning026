@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator - SB Jain</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5f9;
+            text-align: center;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px gray;
+        }
+
+        /* College Name */
+        .college-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .s {
+            color: #90c95b;
+        }
+
+        .b {
+            color: #003366;
+        }
+
+        .jain {
+            color: #90c95b;
+        }
+
+        .full-name {
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 11px;
+            margin: 7px 0;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 12px 30px;
+            margin-top: 15px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00509e;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #eef7e8;
+            border-radius: 8px;
+            color: #222;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .grade {
+            font-size: 22px;
+            font-weight: bold;
+            color: #003366;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- College Name -->
+        <div class="college-name">
+            <span class="s">S.</span>
+            <span class="b">B.</span>
+            <span class="jain"> JAIN</span>
+        </div>
+
+        <div class="full-name">
+            S. B. JAIN INSTITUTE OF TECHNOLOGY,<br>
+            MANAGEMENT & RESEARCH, NAGPUR.
+        </div>
+
+        <hr>
+
+        <h2>Student Grade Calculator</h2>
+
+        <!-- Student Name -->
+        <input type="text" id="name" placeholder="Enter Student Name">
+
+        <!-- Subject Marks -->
+        <input type="number" id="maths" placeholder="Enter Maths Marks">
+        <input type="number" id="physics" placeholder="Enter Physics Marks">
+        <input type="number" id="chemistry" placeholder="Enter Chemistry Marks">
+        <input type="number" id="programming" placeholder="Enter Programming Marks">
+        <input type="number" id="english" placeholder="Enter English Marks">
+
+        <br>
+
+        <button onclick="calculateResult()">Calculate Result</button>
+
+        <!-- Result -->
+        <div id="result"></div>
+
+    </div>
+
+
+    <script>
+
+        function calculateResult() {
+
+            // Get student name
+            let name = document.getElementById("name").value;
+
+            // Get marks
+            let maths = Number(document.getElementById("maths").value);
+            let physics = Number(document.getElementById("physics").value);
+            let chemistry = Number(document.getElementById("chemistry").value);
+            let programming = Number(document.getElementById("programming").value);
+            let english = Number(document.getElementById("english").value);
+
+            // Calculate total
+            let total = maths + physics + chemistry + programming + english;
+
+            // Calculate percentage
+            let percentage = (total / 500) * 100;
+
+            // Calculate grade
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A+";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+            }
+            else if (percentage >= 50) {
+                grade = "D";
+            }
+            else if (percentage >= 40) {
+                grade = "E";
+            }
+            else {
+                grade = "F";
+            }
+
+            // Display result
+            document.getElementById("result").innerHTML =
+                "<b>Student Name:</b> " + name + "<br>" +
+                "<b>Total Marks:</b> " + total + " / 500<br>" +
+                "<b>Percentage:</b> " + percentage.toFixed(2) + "%<br>" +
+                "<b class='grade'>Grade: " + grade + "</b>";
+        }
+
+    </script>
+
+</body>
+</html>
