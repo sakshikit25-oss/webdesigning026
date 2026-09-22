@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College FAQ Help Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+            color: #1e293b;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto;
+        }
+
+        /* Search Box */
+        .search-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #dbeafe;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .controls button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .controls button:hover {
+            background: #1d4ed8;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .question {
+            width: 100%;
+            border: none;
+            background: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 17px;
+            font-weight: bold;
+            color: #1e293b;
+            cursor: pointer;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question:hover {
+            background: #eff6ff;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #2563eb;
+            transition: transform 0.3s ease;
+        }
+
+        /* Answer */
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background: #f8fafc;
+            color: #475569;
+            line-height: 1.6;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .answer {
+            max-height: 200px;
+            padding: 18px 20px;
+        }
+
+        .faq-item.active .icon {
+            transform: rotate(45deg);
+        }
+
+        /* No Result */
+        #noResult {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .question {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🎓 College Help Portal</h1>
+        <p>Frequently Asked Questions</p>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search your question..."
+            >
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="controls">
+
+            <button id="openAll">
+                Open All
+            </button>
+
+            <button id="closeAll">
+                Close All
+            </button>
+
+        </div>
+
+
+        <!-- FAQ Section -->
+        <section id="faqContainer">
+
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+
+                <button class="question">
+
+                    <span>
+                        How can I check my college timetable?
+                    </span>
+
+                    <span class="icon">+</span>
+
+                </button>
+
+                <div class="answer">
+                    You can check your latest timetable on the college
+                    notice board, student portal, or department website.
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+
+                <button class="question">
+
+                    <span>
+                        How can I apply for leave?
+                    </span>
+
+                    <span class="icon">+</span>
+
+                </button>
+
+                <div class="answer">
+                    Students can apply for leave through the college
+                    portal or submit a leave application to their
+                    respective faculty member.
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+
+                <button class="question">
+
+                    <span>
+                        Where can I find study materials?
+                    </span>
+
+                    <span class="icon">+</span>
+
+                </button>
+
+                <div class="answer">
+                    Study materials are generally available on the
+                    student portal, LMS, Google Classroom, or can be
+                    obtained from the respective subject faculty.
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+
+                <button class="question">
+
+                    <span>
+                        How can I contact my department?
+                    </span>
+
+                    <span class="icon">+</span>
+
+                </button>
+
+                <div class="answer">
+                    You can contact your department through the official
+                    department email, faculty members, or the college
+                    student help desk.
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+
+                <button class="question">
+
+                    <span>
+                        Where can I check examination details?
+                    </span>
+
+                    <span class="icon">+</span>
+
+                </button>
+
+                <div class="answer">
+                    Examination schedules, instructions, and results
+                    can be checked through the official college portal
+                    and examination department notices.
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+
+                <button class="question">
+
+                    <span>
+                        What should I do if I forget my student portal password?
+                    </span>
+
+                    <span class="icon">+</span>
+
+                </button>
+
+                <div class="answer">
+                    Use the "Forgot Password" option on the student
+                    portal. If the problem continues, contact the
+                    college IT help desk.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- No Search Result -->
+        <div id="noResult">
+            <h3>😕 No FAQ Found</h3>
+            <p>Try searching with another keyword.</p>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 College Help Portal | Student Support System
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        // Select all FAQ items
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        // Add event listener to every question
+        faqItems.forEach(function(item) {
+
+            const question = item.querySelector(".question");
+
+            question.addEventListener("click", function() {
+
+                // Toggle active class
+                item.classList.toggle("active");
+
+            });
+
+        });
+
+
+        // Search functionality
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const noResult =
+            document.getElementById("noResult");
+
+
+        searchInput.addEventListener("input", function() {
+
+            const searchText =
+                searchInput.value.toLowerCase().trim();
+
+            let found = false;
+
+
+            faqItems.forEach(function(item) {
+
+                const questionText =
+                    item.querySelector(".question")
+                        .innerText
+                        .toLowerCase();
+
+                const answerText =
+                    item.querySelector(".answer")
+                        .innerText
+                        .toLowerCase();
+
+
+                if (
+                    questionText.includes(searchText) ||
+                    answerText.includes(searchText)
+                ) {
+
+                    item.style.display = "block";
+                    found = true;
+
+                } else {
+
+                    item.style.display = "none";
+
+                }
+
+            });
+
+
+            if (found) {
+
+                noResult.style.display = "none";
+
+            } else {
+
+                noResult.style.display = "block";
+
+            }
+
+        });
+
+
+        // Open All button
+        const openAll =
+            document.getElementById("openAll");
+
+
+        openAll.addEventListener("click", function() {
+
+            faqItems.forEach(function(item) {
+
+                item.classList.add("active");
+
+            });
+
+        });
+
+
+        // Close All button
+        const closeAll =
+            document.getElementById("closeAll");
+
+
+        closeAll.addEventListener("click", function() {
+
+            faqItems.forEach(function(item) {
+
+                item.classList.remove("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
