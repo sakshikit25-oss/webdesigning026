@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal To-Do List</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Main Container -->
+    <div class="max-w-md mx-auto mt-10 bg-white p-6 rounded-lg shadow-lg">
+
+        <!-- Heading -->
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">
+            Personal To-Do List
+        </h1>
+
+        <!-- Input Section -->
+        <div class="flex gap-2 mb-5">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter your task..."
+                class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+
+            <button
+                onclick="addTask()"
+                class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+            >
+                Add
+            </button>
+
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList" class="space-y-3"></ul>
+
+    </div>
+
+
+    <script>
+
+        // Function to add a task
+        function addTask() {
+
+            // Get input value
+            let input = document.getElementById("taskInput");
+            let taskText = input.value.trim();
+
+            // Check if input is empty
+            if (taskText === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            // Create new list item
+            let li = document.createElement("li");
+
+            // Add Tailwind CSS classes
+            li.className =
+                "flex items-center justify-between bg-gray-100 p-3 rounded-lg";
+
+            // Create task text
+            let span = document.createElement("span");
+            span.textContent = taskText;
+            span.className = "text-gray-800 cursor-pointer";
+
+            // Mark task as completed
+            span.onclick = function () {
+                span.classList.toggle("line-through");
+                span.classList.toggle("text-gray-400");
+            };
+
+            // Create delete button
+            let deleteButton = document.createElement("button");
+
+            deleteButton.textContent = "Delete";
+
+            deleteButton.className =
+                "bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600";
+
+            // Delete task
+            deleteButton.onclick = function () {
+                li.remove();
+            };
+
+            // Add task and button to list item
+            li.appendChild(span);
+            li.appendChild(deleteButton);
+
+            // Add list item to task list
+            document.getElementById("taskList").appendChild(li);
+
+            // Clear input box
+            input.value = "";
+        }
+
+    </script>
+
+</body>
+</html>
